@@ -41,14 +41,14 @@ const equations: Equation[] = [
 		latex: (vars: VarNames) => `\\pi ${vars.Radius}^2`,
 		vars: [Vars.Radius.name],
 		name: 'circle.area',
-		relations: ['area', 'radius'],
+		relations: ['area', 'radius', 'pi'],
 		result: 'area',
 	},
 	{
 		latex: (vars: VarNames) => `\\sqrt{\\frac{${vars.Area}}{\\pi}}`,
 		vars: [Vars.Area.name],
 		name: 'circle.pi.radius',
-		relations: ['area', 'radius'],
+		relations: ['area', 'radius', 'pi'],
 		result: 'radius',
 	},
 	{

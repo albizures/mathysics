@@ -11,7 +11,9 @@
 		"start": "next start"
 	},
 	"dependencies": {
+		"@fullhuman/postcss-purgecss": "^2.1.2",
 		"@nteract/mathjax": "^4.0.7",
+		"autoprefixer": "^9.7.6",
 		"mathjax": "^3.0.5",
 		"mathjax-full": "3",
 		"next": "^9.3.4",
@@ -23,6 +25,8 @@
 		"@albizures/prettier-config": "^1.0.0",
 		"@types/node": "^13.11.1",
 		"@types/react": "^16.9.34",
+		"postcss-import": "^12.0.1",
+		"tailwindcss": "^1.2.0",
 		"typescript": "^3.8.3"
 	}
 }
