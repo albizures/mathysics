@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import Anchor from './Anchor';
 
 const Layout: React.FC = (props) => {
 	const { children } = props;
@@ -44,6 +45,14 @@ const Layout: React.FC = (props) => {
 					></path>
 				</svg>
 			</a>
+
+			<div>
+				<h1 className="text-5xl text-center text-gray-800">Mathysics</h1>
+				<div className="flex justify-around md:max-w-md mx-auto">
+					<Anchor href="/">Equations {'&'} Formulas</Anchor>
+					<Anchor href="/exercises">Exercises</Anchor>
+				</div>
+			</div>
 
 			{children}
 		</>

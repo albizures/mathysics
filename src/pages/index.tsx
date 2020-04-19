@@ -47,7 +47,7 @@ const Index = () => {
 	}, [search]);
 
 	return (
-		<div className="mt-10">
+		<div className="mt-6">
 			<div className="container px-6 mx-auto md:max-w-md">
 				<label htmlFor="search" className="sr-only">
 					Search:{' '}
@@ -73,11 +73,14 @@ const Index = () => {
 					</div>
 				</div>
 			</div>
-			<div className="px-2">
+			<div className="px-2 md:max-w-4xl mx-auto">
 				<div className="flex flex-wrap -mx-2">
 					{equations.map((equation) => {
 						return (
-							<div className="w-1/4 px-2" key={equation.name}>
+							<div
+								className="w-full sm:w-1/2 md:w-1/4 px-2"
+								key={equation.name}
+							>
 								<div
 									className={`rounded-sm bg-white shadow p-3 mt-4 text-center`}
 								>
