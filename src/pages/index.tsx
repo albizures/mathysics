@@ -1,5 +1,6 @@
 import React from 'react';
 import * as MathJax from '@nteract/mathjax';
+import Box from '../components/Box';
 import { equations as allEquations, Vars, VarNames } from '../equations';
 
 const varNames = Object.keys(Vars).reduce((names, key) => {
@@ -7,13 +8,6 @@ const varNames = Object.keys(Vars).reduce((names, key) => {
 
 	return names;
 }, {} as Partial<VarNames>) as VarNames;
-
-const varTexts = allEquations.map((equation, index) => {
-	return {
-		index,
-		text: `${equation.result} ${equation.relations}`,
-	};
-});
 
 const Index = () => {
 	const [search, setSearch] = React.useState('');
@@ -82,15 +76,11 @@ const Index = () => {
 								className="w-full sm:w-1/2 md:w-1/4 px-2"
 								key={equation.name}
 							>
-								<div
-									className={`rounded-sm bg-white shadow p-3 mt-4 text-center`}
-								>
-									<MathJax.Provider>
-										<MathJax.Node inline>{`${
-											equation.result
-										} = ${equation.latex(varNames)}`}</MathJax.Node>
-									</MathJax.Provider>
-								</div>
+								<Box className="text-center">
+									<MathJax.Node inline>{`${equation.result} = ${equation.latex(
+										varNames,
+									)}`}</MathJax.Node>
+								</Box>
 							</div>
 						);
 					})}

@@ -1,5 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
+import * as MathJax from '@nteract/mathjax';
 import Anchor from './Anchor';
 
 const Layout: React.FC = (props) => {
@@ -54,7 +55,7 @@ const Layout: React.FC = (props) => {
 				</div>
 			</div>
 
-			{children}
+			<MathJax.Provider>{children}</MathJax.Provider>
 		</>
 	);
 };
