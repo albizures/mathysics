@@ -20,7 +20,7 @@ const Index = () => {
 	const [equations, setEquations] = React.useState(allEquations);
 
 	const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		setSearch(event.target.value);
+		setSearch(event.target.value.toLowerCase());
 	};
 
 	const onMouseUp = (event: React.KeyboardEvent) => {
@@ -59,6 +59,7 @@ const Index = () => {
 						autoFocus={true}
 						className="focus:outline-0 border border-transparent focus:border-gray-300 placeholder-gray-600 rounded-sm py-2 pr-4 pl-10 block w-full appearance-none"
 						value={search}
+						placeholder="Search..."
 						id="search"
 						onChange={onChange}
 					/>
