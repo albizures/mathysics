@@ -1,3 +1,7 @@
+import { PI, frac } from '../utils/latex';
+
+const { raw: r } = String;
+
 const Vars = {
 	Radius: {
 		name: 'radius',
@@ -13,11 +17,11 @@ const Vars = {
 	},
 	Velocity: {
 		name: 'velocity',
-		varName: '\\vec{v}',
+		varName: r`\vec{v}`,
 	},
 	Displacement: {
 		name: 'displacement',
-		varName: '\\vec{s}',
+		varName: r`\vec{s}`,
 	},
 	Time: {
 		name: 'time',
@@ -38,35 +42,35 @@ export interface Equation {
 
 const equations: Equation[] = [
 	{
-		latex: (vars: VarNames) => `\\pi ${vars.Radius}^2`,
+		latex: (vars: VarNames) => r`${PI} ${vars.Radius}^2`,
 		vars: [Vars.Radius.name],
 		name: 'circle.area',
 		relations: ['area', 'radius', 'pi'],
 		result: 'area',
 	},
 	{
-		latex: (vars: VarNames) => `\\sqrt{\\frac{${vars.Area}}{\\pi}}`,
+		latex: (vars: VarNames) => r`\sqrt{${frac(vars.Area, PI)}}`,
 		vars: [Vars.Area.name],
 		name: 'circle.pi.radius',
 		relations: ['area', 'radius', 'pi'],
 		result: 'radius',
 	},
 	{
-		latex: (vars: VarNames) => `2${vars.Radius}`,
+		latex: (vars: VarNames) => r`2${vars.Radius}`,
 		vars: [Vars.Radius.name],
 		name: 'circle.diameter',
 		relations: ['diameter', 'radius'],
 		result: 'diameter',
 	},
 	{
-		latex: (vars: VarNames) => `\\frac{${vars.Diameter}}{2}`,
+		latex: (vars: VarNames) => r`${frac(vars.Diameter, 2)}`,
 		vars: [Vars.Diameter.name],
 		name: 'circle.radius',
 		relations: ['diameter', 'radius'],
 		result: 'radius',
 	},
 	{
-		latex: (vars: VarNames) => `\\frac{${vars.Diameter}}{${vars.Time}}`,
+		latex: (vars: VarNames) => r`${frac(vars.Diameter, vars.Time)}`,
 		vars: [Vars.Displacement.name, Vars.Time.name],
 		name: 'velocity',
 		relations: ['diameter', 'radius'],
