@@ -2,10 +2,26 @@ import React from 'react';
 import * as MathJax from '@nteract/mathjax';
 import { exercises } from '../exercises';
 import Box from '../components/Box';
+import { log, root } from '../utils/latex';
+
+const getRandomInt = (min: number, max: number) => {
+	min = Math.ceil(min);
+	max = Math.floor(max);
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+const logOfARoot = () => {
+	const base = getRandomInt(2, 10);
+	console.log(12 - base);
+
+	const randicand = Math.pow(base, getRandomInt(2, 10 - base));
+	return log(base, root(getRandomInt(2, 10), randicand));
+};
 
 const Exercises = () => {
 	return (
 		<div className="container md:px-6 mx-auto md:max-w-lg">
+			<MathJax.Node>{logOfARoot()}</MathJax.Node>
 			{exercises.map((exercise, index) => {
 				return (
 					<Box key={index}>
