@@ -16,7 +16,7 @@
 		"autoprefixer": "^9.7.6",
 		"mathjax": "^3.0.5",
 		"mathjax-full": "3",
-		"next": "^9.3.4",
+		"next": "^11.1.0",
 		"react": "^16.13.1",
 		"react-dom": "^16.13.1",
 		"react-mathjax": "^1.0.1"
