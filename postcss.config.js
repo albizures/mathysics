@@ -1,15 +1,14 @@
-const plugins = ['postcss-import', 'tailwindcss', 'autoprefixer'];
+const config = {
+	plugins: ['tailwindcss', 'autoprefixer'],
+};
 
 if (process.env.NODE_ENV === 'production') {
-	plugins.push([
-		'@fullhuman/postcss-purgecss',
+	config.plugins.push([
+		'cssnano',
 		{
-			content: ['./src/components/**/*.tsx', './src/pages/**/*.tsx'],
-			defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
+			preset: 'default',
 		},
 	]);
 }
 
-module.exports = {
-	plugins,
-};
+module.exports = config;
